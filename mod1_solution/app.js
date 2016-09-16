@@ -7,6 +7,12 @@
   LunchCheckController.$inject = ['$scope'];
 
   function LunchCheckController ($scope) {
-    console.log('working');
+    $scope.buttonClick = function (string) {
+      if (!string) {
+        return $scope.message = "Please enter data first";
+      }
+      var arr = string.split(',');
+      arr.length <= 3 ? $scope.message = "Enjoy!" : $scope.message = "Too Much!";
+    };
   }
 })();
